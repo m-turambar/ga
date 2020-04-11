@@ -21,7 +21,7 @@ set(CUDA_LINK_LIBRARIES_KEYWORD PUBLIC)
 #cuda_select_nvcc_arch_flags(ARCH_FLAGS) #opcional
 
 if(NOT DEFINED CMAKE_CUDA_STANDARD)
-	set(CMAKE_CUDA_STANDARD 11)
+	set(CMAKE_CUDA_STANDARD 14)
 	set(CMAKE_CUDA_STANDARD_REQUIRED_ON)
 endif()
 
@@ -30,7 +30,7 @@ add_executable (ga
 )
 
 add_dependencies(ga OpenGL::OpenGL)
-include_directories(${GLUT_INCLUDE_DIRS} ${CUDA_INCLUDE_DIRS} ~/CUDA_SAMPLES/common/inc)
+include_directories(${GLUT_INCLUDE_DIRS} ${CUDA_INCLUDE_DIRS} ~/CUDA_SAMPLES/common/inc ~/proyectos/utils)
 
 #target_link_libraries(ncuerpo OpenGL::OpenGL ${GLUT_LIBRARY} GLU)
 target_link_libraries(ga ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${CUDA_LIBRARIES} OpenGL::OpenGL )
